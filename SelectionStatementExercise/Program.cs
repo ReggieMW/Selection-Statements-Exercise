@@ -11,10 +11,12 @@ namespace SelectionStatementExercise
             int favoriteNumber = rando.Next(1, 100);
             bool correctGuess = false;
             Console.WriteLine("Guess my favorite number: ");
+            int guesses = 0;
+            
             do
             {
                 int userInput = int.Parse(Console.ReadLine());
-
+                guesses++;
                 if (userInput > favoriteNumber)
                 {
                     Console.WriteLine("Your guess is greater than my favorite number. Guess again: ");
@@ -26,7 +28,8 @@ namespace SelectionStatementExercise
                 else
                 {
                     correctGuess = true;
-                    Console.WriteLine("You guessed my favorite number, you win!");
+                    
+                    Console.WriteLine($"You guessed my favorite number, you won in {guesses} attempts!");
                 }
             } while (correctGuess == false);
             
